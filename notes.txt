@@ -73,7 +73,7 @@ https://github.com/nallar/TickThreading/blob/master/resources/patches.xml#L1501
 == permissions
 
 in MCPC, all commands are assigned a permission node base off the classpath to the command class.  
-For example  you would use clag.CLagCommand in a permission node to have access to that comand
+For example  you would use clag.commands.CLagCommand in a permission node to have access to that comand
 
 sjphone : permissionnodes
 http://wiki.ess3.net/wiki/Group_Manager

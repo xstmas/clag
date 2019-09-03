@@ -2,8 +2,8 @@
 
 package clag;
 
+import clag.util.CLagUtils;
 import cpw.mods.fml.common.FMLLog;
-import net.minecraft.block.Block;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.player.EntityPlayerMP;

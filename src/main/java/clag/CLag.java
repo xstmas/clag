@@ -1,6 +1,12 @@
 // clag = chunklag, localize lag to the chunks causing it by slowing down time inside laggy chunks.
 package clag;
 
+import clag.commands.CLagCommand;
+import clag.commands.CLagCommandInfo;
+import clag.commands.CLagCommandNear;
+import clag.proxy.CommonProxy;
+import clag.util.CLagInfo;
+import clag.util.CLagUtils;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -31,7 +37,7 @@ public class CLag {
 	public static CLag instance;
 
 	// Says where the client and server 'proxy' code is loaded.
-	@SidedProxy(clientSide = CLagInfo.CLIENTPROXY, serverSide = CLagInfo.COMMONPROXY)
+	@SidedProxy(serverSide = CLagInfo.COMMONPROXY)
 	public static CommonProxy proxy;
 
 	public File configfile;
@@ -162,7 +168,7 @@ public class CLag {
 		return startProfiling(Arrays.<World>asList(arr));
 	}
 	*/
-	boolean bIsCLagHookInstalled = false;
+	public boolean bIsCLagHookInstalled = false;
 
 	public boolean startCLag() {
 		if ( bIsCLagHookInstalled ) return false;

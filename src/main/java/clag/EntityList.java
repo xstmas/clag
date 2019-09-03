@@ -1,5 +1,6 @@
 package clag;
 
+import clag.context.ContextAccess;
 import cpw.mods.fml.common.FMLLog;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;

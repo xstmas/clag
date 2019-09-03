@@ -58,9 +58,9 @@ permissions
 === 
 
 in MCPC, all commands are assigned a permission node base off the classpath to the command class.  
-* clag.CLagCommandInfo = for players, so they can do /clag-info
-* clag.CLagCommandNear = for players, so they can do /clag-near
-* clag.CLagCommand = for admins, access /clag [subcommand]
+* clag.commands.CLagCommandInfo = for players, so they can do /clag-info
+* clag.commands.CLagCommandNear = for players, so they can do /clag-near
+* clag.commands.CLagCommand = for admins, access /clag [subcommand]
 
 ideas
 ====
