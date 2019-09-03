@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-@Mod(modid = CLagInfo.ID, name = CLagInfo.NAME, version = CLagInfo.VERS)
+@Mod(modid = CLagInfo.ID, name = CLagInfo.NAME, version = CLagInfo.VERS, acceptableRemoteVersions = "*")
 // @NetworkMod(clientSideRequired=false, serverSideRequired=true)
 public class CLag {
 
@@ -220,7 +220,7 @@ public class CLag {
 		}
 		try {
 			Field loadedTileEntityField = CLagUtils.getFields(World.class, List.class)[loadedTileEntityFieldIndex];
-			new LoadedTileEntityList(world, loadedTileEntityField);
+			new LoadedTileEntityListThermos(world, loadedTileEntityField);
 			//Field loadedEntityField = CLagUtils.getFields(World.class, List.class)[loadedEntityFieldIndex];
 			//new LoadedEntityList(world, loadedEntityField);
 			CLagUtils.debug("CLag: Profiling hooked for world " + (world.getClass()));
@@ -238,10 +238,11 @@ public class CLag {
 			// overrides World.loadedTileEntityList
 			Field loadedTileEntityField = CLagUtils.getFields(World.class, List.class)[loadedTileEntityFieldIndex];
 			Object loadedTileEntityList = loadedTileEntityField.get(world);
-			if ( loadedTileEntityList instanceof EntityList ) {
-				((EntityList) loadedTileEntityList).unhook();
+			if ( loadedTileEntityList instanceof EntityListThermos ) {
+				((EntityListThermos<Object>) loadedTileEntityList).unhook();
 			} else {
 				FMLLog.severe("CLag: Looks like another mod broke CLag's replacement tile entity list in world: " + (world.getClass()));
+				FMLLog.severe("The new class is " + loadedTileEntityList.getClass());
 			}
 	        /*
             Field loadedEntityField = CLagUtils.getFields(World.class, List.class)[loadedEntityFieldIndex];
