@@ -1,6 +1,8 @@
 package clag.proxy;
 
+import clag.handlers.CLagTickHandler;
 import clag.util.CLagUtils;
+import cpw.mods.fml.common.FMLCommonHandler;
 
 public class ClientProxy extends CommonProxy {
 	public ClientProxy() {
@@ -11,7 +13,7 @@ public class ClientProxy extends CommonProxy {
 	public void registerTickHandler() {
 		// needed here for "server" part on singleplayer 2x clientproxy, distinguished by Side.SERVER param to TickRegistry
 		//CLagUtils.debug("CLag: ClientProxy.registerTickHandler 01");
-		//TickRegistry.registerTickHandler(new CLagTickHandler(), Side.SERVER);
+		//FMLCommonHandler.instance().bus().register(new CLagTickHandler());
 		//CLagUtils.debug("CLag: ClientProxy.registerTickHandler 02");
 	}
 }

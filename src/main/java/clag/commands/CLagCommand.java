@@ -163,7 +163,7 @@ public class CLagCommand extends CommandBase {
 		{
 			if (par2ArrayOfStr.length >= 2)
 			{
-				int t = parseIntWithMin(sender, par2ArrayOfStr[1], 0);
+				Block t = Block.getBlockFromName(par2ArrayOfStr[1]);
 				g.BlackListAdd(t);
 			} else
 			{

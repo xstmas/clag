@@ -81,8 +81,8 @@ public class CLagTileEntityTicker {
 	}
 
 	// ----------------------------- blacklist
-	
-	public HashSet<Integer> blacklist = new HashSet<Integer>();
+
+	public HashSet<Block> blacklist = new HashSet<Block>();
 
 	public void BlackListClear ()
 	{
@@ -90,7 +90,7 @@ public class CLagTileEntityTicker {
 		CLagUtils.debug("CLagTileEntityTicker: BlackListClear ");
 	}
 	
-	public void BlackListAdd (int t)
+	public void BlackListAdd (Block t)
 	{
 		bEnableBlacklist = true;
 		blacklist.add(t);

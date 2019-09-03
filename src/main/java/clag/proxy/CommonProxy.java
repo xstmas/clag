@@ -17,7 +17,7 @@ public class CommonProxy {
 	public void registerTickHandler() {
 		CLagUtils.debug("CLag: CommonProxy.registerTickHandler 01");
 		FMLCommonHandler.instance().bus().register(new CLagTickHandler());
-		//CLagUtils.debug("CLag: CommonProxy.registerTickHandler 02");
+		CLagUtils.debug("CLag: CommonProxy.registerTickHandler 02");
 	}
 
 }

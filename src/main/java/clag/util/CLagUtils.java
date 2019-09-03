@@ -4,6 +4,7 @@ import clag.CLag;
 import cpw.mods.fml.common.FMLLog;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
@@ -22,7 +23,7 @@ public class CLagUtils {
 	public static EntityPlayerMP getPlayerByCmdSender(ICommandSender par1ICommandSender) {
 		// from CommandHandler
 		String name = par1ICommandSender.getCommandSenderName();
-		EntityPlayerMP player = FCForgeUtils.getPlayer(name);
+		EntityPlayerMP player = MinecraftServer.getServer().getConfigurationManager().getPlayerByUsername(name);
 		//FMLLog.info("getPlayerByCmdSender name="+name+" found="+((player != null)?"yes":"no"));
 		return player;
 	}
