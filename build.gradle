@@ -23,7 +23,7 @@ apply plugin: 'forge'
 version = "0.0.7"
 archivesBaseName = "CLag-[1.7.10]"
 
-group 'br.com.finalcraft'
+group 'mw.com.su'
 
 compileJava.options.encoding = 'UTF-8'
 
