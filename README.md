@@ -3,10 +3,6 @@ clag
 
 serverside minecraft mod to slow down time in chunks causing lag
 
-download
-====
-[CLag-0.0.6.jar](releases/CLag-0.0.6.jar?raw=true)
-
 about
 ====
 
